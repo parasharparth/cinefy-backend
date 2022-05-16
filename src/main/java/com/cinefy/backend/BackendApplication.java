@@ -15,5 +15,6 @@ public class BackendApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //Here, we will call the controller and the application will start running accordingly
+
     }
 }
