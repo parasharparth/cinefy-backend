@@ -1,7 +1,15 @@
 package com.cinefy.backend.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class CinefyMovieDomain {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long movieId;
     private String movieName;
     private int cityId; //This cityID will be matched in the controller to the city id selected by the user
