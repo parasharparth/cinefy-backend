@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    image: 'cinefy:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/Cinefy
+      - SPRING_DATASOURCE_USERNAME=root
+
+  db:
+    image: 'mysql:5.7'
+    container_name: db
+    environment:
+      - MYSQL_DATABASE=Cinefy
+      - MYSQL_ROOT_PASSWORD=Intel@2022
