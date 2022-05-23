@@ -1,6 +1,7 @@
 package com.cinefy.backend.model;
 
 import javax.persistence.Id;
+import java.util.Date;
 import java.util.List;
 
 public class BookingPageDomain {
@@ -11,6 +12,7 @@ public class BookingPageDomain {
     private Long id;
     private List<FeaturedMovieDomain> featuredMovieList;
     private List<LoginPageDomain> loginPageList;
+    private Date dateOfBooking;
 
     public BookingPageDomain(String userId, List<CinefyMovieDomain> movieList, Long id, List<FeaturedMovieDomain> featuredMovieList, List<LoginPageDomain> loginPageList) {
         this.userId = userId;
@@ -18,6 +20,15 @@ public class BookingPageDomain {
         this.id = id;
         this.featuredMovieList = featuredMovieList;
         this.loginPageList = loginPageList;
+    }
+
+    public BookingPageDomain(String userId, List<CinefyMovieDomain> movieList, Long id, List<FeaturedMovieDomain> featuredMovieList, List<LoginPageDomain> loginPageList, Date dateOfBooking) {
+        this.userId = userId;
+        this.movieList = movieList;
+        this.id = id;
+        this.featuredMovieList = featuredMovieList;
+        this.loginPageList = loginPageList;
+        this.dateOfBooking = dateOfBooking;
     }
 
     public BookingPageDomain() {
@@ -31,6 +42,14 @@ public class BookingPageDomain {
     @Id
     public Long getId() {
         return id;
+    }
+
+    public Date getDateOfBooking() {
+        return dateOfBooking;
+    }
+
+    public void setDateOfBooking(Date dateOfBooking) {
+        this.dateOfBooking = dateOfBooking;
     }
 
     public String getUserId() {
