@@ -12,6 +12,7 @@ public class AboutUsDomain {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
     private String photoURL;
+    private String githubAccountInfo;
 
     //Constructors required for calling the methods.
     public AboutUsDomain() {
@@ -20,6 +21,12 @@ public class AboutUsDomain {
     public AboutUsDomain(String name, String photoURL) {
         this.name = name;
         this.photoURL = photoURL;
+    }
+
+    public AboutUsDomain(String name, String photoURL, String githubAccountInfo) {
+        this.name = name;
+        this.photoURL = photoURL;
+        this.githubAccountInfo = githubAccountInfo;
     }
 
     //getters and setters
@@ -38,4 +45,13 @@ public class AboutUsDomain {
     public void setPhotoURL(String photoURL) {
         this.photoURL = photoURL;
     }
+
+    public String getGithubAccountInfo() {
+        return githubAccountInfo;
+    }
+
+    public void setGithubAccountInfo(String githubAccountInfo) {
+        this.githubAccountInfo = githubAccountInfo;
+    }
 }
+
