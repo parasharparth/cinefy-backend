@@ -13,6 +13,22 @@ public class BookingPageDomain {
     private List<FeaturedMovieDomain> featuredMovieList;
     private List<LoginPageDomain> loginPageList;
     private Date dateOfBooking;
+    private List<LocationDomain> locations;
+    private List<PriceDomain> priceOfMovie;
+    private List<NumberOfTicketsDomain> numberOfTickets;
+
+
+    public BookingPageDomain(String userId, List<CinefyMovieDomain> movieList, Long id, List<FeaturedMovieDomain> featuredMovieList, List<LoginPageDomain> loginPageList, Date dateOfBooking, List<LocationDomain> locations, List<PriceDomain> priceOfMovie, List<NumberOfTicketsDomain> numberOfTickets) {
+        this.userId = userId;
+        this.movieList = movieList;
+        this.id = id;
+        this.featuredMovieList = featuredMovieList;
+        this.loginPageList = loginPageList;
+        this.dateOfBooking = dateOfBooking;
+        this.locations = locations;
+        this.priceOfMovie = priceOfMovie;
+        this.numberOfTickets = numberOfTickets;
+    }
 
     public BookingPageDomain(String userId, List<CinefyMovieDomain> movieList, Long id, List<FeaturedMovieDomain> featuredMovieList, List<LoginPageDomain> loginPageList) {
         this.userId = userId;
@@ -33,6 +49,30 @@ public class BookingPageDomain {
 
     public BookingPageDomain() {
 
+    }
+
+    public List<LocationDomain> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(List<LocationDomain> locations) {
+        this.locations = locations;
+    }
+
+    public List<PriceDomain> getPriceOfMovie() {
+        return priceOfMovie;
+    }
+
+    public void setPriceOfMovie(List<PriceDomain> priceOfMovie) {
+        this.priceOfMovie = priceOfMovie;
+    }
+
+    public List<NumberOfTicketsDomain> getNumberOfTickets() {
+        return numberOfTickets;
+    }
+
+    public void setNumberOfTickets(List<NumberOfTicketsDomain> numberOfTickets) {
+        this.numberOfTickets = numberOfTickets;
     }
 
     public void setId(Long id) {
