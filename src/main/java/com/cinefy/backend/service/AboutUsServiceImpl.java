@@ -1,31 +1,29 @@
 package com.cinefy.backend.service;
 
-import com.cinefy.backend.model.CinefyMovieDomain;
-import com.cinefy.backend.repository.CinefyRepository;
+import com.cinefy.backend.model.AboutUsDomain;
+import com.cinefy.backend.repository.AboutUsRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
-public class CinefyServiceImpl implements CinefyService {
+public class AboutUsServiceImpl implements AboutUsService {
 
     @Autowired
-    private CinefyRepository cinefyRepository;
+    private AboutUsRepository aboutUsRepository;
 
     @Override
-    public List<CinefyMovieDomain> getMovies()
-    {
-       return cinefyRepository.findAll();
+    public List<AboutUsDomain> getAboutUsDomains() {
+        return aboutUsRepository.findAll();
     }
 
-    @Override
-    public String convert(List<CinefyMovieDomain> list) throws JsonProcessingException {
+    public String convert(List<AboutUsDomain> list) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(list);
         return jsonString;
     }
-
-
 }

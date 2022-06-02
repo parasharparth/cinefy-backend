@@ -3,10 +3,10 @@ package com.cinefy.backend.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.BAD_REQUEST)
-public class BadRequestException extends Exception{
+@ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
+public class TooManyRequestsException extends Exception{
 
-    public BadRequestException(String message)
+    public TooManyRequestsException(String message)
     {
         super(message);
     }
