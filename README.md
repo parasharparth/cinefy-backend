@@ -1,4 +1,4 @@
-CineFy  
+# CineFy  
 Find your Cinema  
 
 An online platform to help you locate and book a movie of your choice!!! 
