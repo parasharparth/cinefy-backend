@@ -1,0 +1,12 @@
+dbproperties:
+  ipaddress: 10.0.0.1
+  port: 8080
+  url: jdbc:mysql://localhost:3306/Cinefy
+  user: root
+  password: password
+
+
+sqlqueries:
+  homepagedata: select * from homepage;
+  bookinginsertion: insert into bookings(?,?,?,?);
+  pricecalculation: select price,numberoftickets from price;
